@@ -1,0 +1,7 @@
+-
+  type: widget
+  data:
+    plugin: icons/bootstrap_v1_8_1
+    method: icon
+    data:
+      icon: alarm 
