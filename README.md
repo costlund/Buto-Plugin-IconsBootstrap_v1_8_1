@@ -11,6 +11,10 @@ data:
   data:
     icon: alarm 
 ```
+Add style (optional).
+```
+    style: "margin-top:-4px"
+```
 
 ## Widget list
 List all icons in a table.

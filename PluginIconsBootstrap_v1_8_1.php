@@ -61,6 +61,13 @@ class PluginIconsBootstrap_v1_8_1{
        */
       $content = $icons->get("icons/question-diamond-fill");
     }
+    /**
+     * style
+     */
+    $content = str_replace('<svg', '<svg style="'.$data->get('data/style').'"', $content);
+    /**
+     * 
+     */
     $element = new PluginWfYml(__DIR__.'/element/'.__FUNCTION__.'.yml');
     $element->setByTag(array('content' => $content));
     wfDocument::renderElement($element);
