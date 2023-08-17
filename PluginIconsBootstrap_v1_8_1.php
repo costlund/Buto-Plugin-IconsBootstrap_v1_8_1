@@ -19,7 +19,7 @@ class PluginIconsBootstrap_v1_8_1{
     $icons = new PluginWfYml($this->icons_file);
     foreach($scan as $v){
       $c = wfFilesystem::getContents($this->icons_dir.'/'.$v);
-      $k = str_replace('.svg', '', $v);
+      $k = wfPhpfunc::str_replace('.svg', '', $v);
       $icons->set("icons/$k", $c);
     }
     $icons->save();
@@ -64,7 +64,7 @@ class PluginIconsBootstrap_v1_8_1{
     /**
      * style
      */
-    $content = str_replace('<svg', '<svg style="'.$data->get('data/style').'"', $content);
+    $content = wfPhpfunc::str_replace('<svg', '<svg style="'.$data->get('data/style').'"', $content);
     /**
      * 
      */
