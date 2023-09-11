@@ -47,6 +47,12 @@ class PluginIconsBootstrap_v1_8_1{
     $element->setByTag(array('data' => $data));
     wfDocument::renderElement($element);
   }
+  public function page_list(){
+    wfPlugin::enable('icons/bootstrap_v1_8_1');
+    wfPlugin::enable('wf/table');
+    $widget = wfDocument::createWidget('icons/bootstrap_v1_8_1', 'list');
+    wfDocument::renderElement(array($widget));
+  }
   public function widget_icon($data){
     $data = new PluginWfArray($data);
     $icon = $data->get('data/icon');

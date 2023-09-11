@@ -33,3 +33,9 @@ Creating a singe yml file with all icons.
 ```
 http://localhost/?webmaster_plugin=icons/bootstrap_v1_8_1&page=create_file
 ```
+
+## List
+Webmaster list.
+```
+http://localhost/?webmaster_plugin=icons/bootstrap_v1_8_1&page=list
+```
