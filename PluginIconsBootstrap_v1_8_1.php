@@ -5,17 +5,15 @@ class PluginIconsBootstrap_v1_8_1{
   function __construct() {
     wfPlugin::includeonce('wf/yml');
     $this->icons_file = '/plugin/icons/bootstrap_v1_8_1/data/icons.yml';
-    $this->icons_dir = '/plugin/icons/bootstrap_v1_8_1/icons-1.8.1/icons';
+    $this->icons_dir = '/plugin/icons/bootstrap_v1_8_1/new_icons';
   }
-  /**
-   * Create one file of all icons.
-   * This page is only for webmaster to maintain this plugin.
-   * http://localhost/?webmaster_plugin=icons/bootstrap_v1_8_1&page=create_file
-   */
   public function page_create_file(){
     $this->webmaster_check();
-    $scan = wfFilesystem::getScandir(__DIR__.'/icons-1.8.1/icons');
+    $scan = wfFilesystem::getScandir(__DIR__.'/new_icons');
     $scan_count = sizeof($scan);
+    if($scan_count==0){
+      exit('No icons in folder /new_icons!');
+    }
     $icons = new PluginWfYml($this->icons_file);
     foreach($scan as $v){
       $c = wfFilesystem::getContents($this->icons_dir.'/'.$v);
@@ -35,6 +33,7 @@ class PluginIconsBootstrap_v1_8_1{
      */
     wfPlugin::enable('icons/bootstrap_v1_8_1');
     $element = new PluginWfYml(__DIR__.'/element/'.__FUNCTION__.'.yml');
+    $element->setByTag(wfRequest::getAll(), 'get');
     wfDocument::renderElement($element);
   }
   public function widget_list($data){

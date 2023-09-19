@@ -1,5 +1,8 @@
 # Buto-Plugin-IconsBootstrap_v1_8_1
-Bootstrap svg icons (1668 icons).
+- Bootstrap svg icons (2000 icons).
+- icons.getbootstrap.com
+- Updated with icons from v1.11.0.
+- All icons in file /data/icons.yml
 
 ## Widget include
 Get an icon (alarm).
@@ -25,17 +28,14 @@ data:
   method: list
 ```
 
-## From site
-https://icons.getbootstrap.com/
+## Icon (webmaster)
+- http://localhost/?webmaster_plugin=icons/bootstrap_v1_8_1&page=icon&icon=emoji-angry
 
-## Webmaster pages
-Creating a singe yml file with all icons.
-```
-http://localhost/?webmaster_plugin=icons/bootstrap_v1_8_1&page=create_file
-```
+## List (webmaster)
+- http://localhost/?webmaster_plugin=icons/bootstrap_v1_8_1&page=list
 
-## List
-Webmaster list.
-```
-http://localhost/?webmaster_plugin=icons/bootstrap_v1_8_1&page=list
-```
+## Update process (only developer)
+- Get new icons from https://github.com/twbs/icons.
+- Put icons in folder /new_icons.
+- Run page http://localhost/?webmaster_plugin=icons/bootstrap_v1_8_1&page=create_file.
+- Delete icons in folder /new_icons.
